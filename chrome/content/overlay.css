@@ -1,0 +1,26 @@
+/*#nav-bar[navbarontop="true"] {
+  -moz-box-ordinal-group: 9;
+}*/
+
+#main-window:not([navbarintitlebar]) #navbarontop_placeholderAppmenu,
+#main-window:not([navbarintitlebar]) #navbarontop_placeholderCaption,
+#main-window:not([navbarintitlebar]) #navbarontop_placeholderAppmenuMenubar,
+#main-window:not([navbarintitlebar]) #navbarontop_placeholderCaptionMenubar {
+  display: none;
+}
+
+#main-window[navbarintitlebar]:not([inFullscreen]) #navbarontop_placeholderAppmenu,
+#main-window[navbarintitlebar]:not([inFullscreen]) #navbarontop_placeholderCaption,
+#main-window[navbarintitlebar]:not([inFullscreen]) #navbarontop_placeholderAppmenuMenubar,
+#main-window[navbarintitlebar]:not([inFullscreen]) #navbarontop_placeholderCaptionMenubar {
+  display: -moz-box; /* #main-window:not([tabsintitlebar]) ... hides these placeholders. show them.*/
+}
+
+#main-window[navbarintitlebar][sizemode="normal"] #navigator-toolbox[iconsize="small"] #nav-bar {
+  margin-top: 3px; /* Shift down nav-bar to allow user to resize window on top */
+}
+
+#main-window[navbarintitlebar] #appmenu-button-container,
+#main-window[navbarintitlebar] #titlebar-buttonbox {
+  position: relative;
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://navbarontop/skin/overlay.css" type="text/css"?>
+<?xml-stylesheet href="chrome://navbarontop/content/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://navbarontop/locale/overlay.dtd">
+<overlay id="navbarontop-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="overlay.js"/>
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="navbarontop-strings" src="chrome://navbarontop/locale/overlay.properties"/>
+  </stringbundleset>
+  
+  <commandset id="mainCommandSet">
+    <!-- if TabsOnTop is disabled (i.e. we're enabling TabsOnTop) and NavBarOnTop is currently enabled, then disable it.
+         , BEFORE TabsOnTop is enabled! -->
+    <command id="cmd_ToggleTabsOnTop" oncommand="navbarontop.onToggleTabsOnTop();TabsOnTop.toggle();"/>
+    <command id="cmd_ToggleNavBarOnTop" oncommand="navbarontop.toggle();"/>
+  </commandset>
+
+  <!-- Menu overlays -->
+  <menupopup id="toolbar-context-menu">
+    <menuitem command="cmd_ToggleNavBarOnTop" type="checkbox" label="&viewNavBarOnTop.label;" accesskey="&viewNavBarOnTop.accesskey;" position="3"/>
+  </menupopup>
+  
+  <menupopup id="appmenu_customizeMenu">
+    <!--<menuitem id="appmenu_toggleTabsOnTop"/>-->
+	<menuitem id="appmenu_toggleNavBarOnTop" command="cmd_ToggleNavBarOnTop" type="checkbox" label="&viewNavBarOnTop.label;" position="5"/>
+  </menupopup>
+  
+  <!-- also look at viewtoolbarsmenu, which can't be overlaid. May use Javascript in the future. -->
+  
+  <!-- Layout objects, as seen on TabToolbar -->
+  <toolbar id="nav-bar">
+    <hbox id="navbarontop_placeholderAppmenu" class="titlebar-placeholder" type="appmenu-button" ordinal="0"/>
+	<hbox id="navbarontop_placeholderCaption" class="titlebar-placeholder" type="caption-buttons" ordinal="1000"/>
+  </toolbar>
+  
+  <toolbar id="toolbar-menubar">
+    <!-- There are already hboxes of this sort in toolbar-menubar, but we can't control them. Control these instead. -->
+    <hbox id="navbarontop_placeholderAppmenuMenubar" class="titlebar-placeholder" type="appmenu-button" ordinal="0"/>
+	<hbox id="navbarontop_placeholderCaptionMenubar" class="titlebar-placeholder" type="caption-buttons" ordinal="1000"/>
+  </toolbar>
+</overlay>

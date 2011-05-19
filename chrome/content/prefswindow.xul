@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://navbarontop/locale/overlay.dtd">
+
+<prefwindow id="navbarontop-prefs"
+     title="&navbarontopPrefWindow.label;"
+	 onload="navbarontop_prefsWindow.onLoad();"
+	 ondialogcancel="navbarontop_prefsWindow.onDialogCancel();"
+     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+ 
+<script src="prefswindow.js"/>
+ 
+<prefpane id="navbarontop-mainpane" label="&navbarontopPrefMainPane.label;">
+  <preferences>
+    <preference id="pref_persistUnMaximized" name="extensions.navbarontop.persistUnMaximized" instantApply="true" type="bool"/>
+	<preference id="pref_marginLeft" name="extensions.navbarontop.marginLeft" instantApply="true" type="int"/>
+	<preference id="pref_marginRight" name="extensions.navbarontop.marginRight" instantApply="true" type="int"/>
+	<preference id="pref_minimumWidthEnable" name="extensions.navbarontop.minimumWidthEnable" instantApply="true" type="bool"/>
+	<preference id="pref_minimumWidth" name="extensions.navbarontop.minimumWidth" instantApply="true" type="int"/>
+  </preferences>
+ 
+  <groupbox>
+    <caption label="&navbarontopPrefMainGroupbox.label;"/>
+    <checkbox preference="pref_persistUnMaximized" id="persistUnMaximizedCheckbox" label="&navbarontopPrefPersistUnMaximized.label;" accesskey="&navbarontopPrefPersistUnMaximized.accesskey;"/>
+	<hbox>
+	  <checkbox preference="pref_minimumWidthEnable" id="minimumWidthEnableCheckbox" label="&navbarontopPrefMinimumWidthEnable.label;" accesskey="&navbarontopPrefMinimumWidthEnable.accesskey;"/>
+	  <textbox type="number" id="minimumWidthTextbox" preference="pref_minimumWidth" maxlength="4" size="4" min="0" max="2560"/>
+	  <description>&navbarontopPx.label;</description>
+	</hbox>
+  </groupbox>
+  
+  <groupbox>
+    <caption label="&navbarontopPrefDisplayGroupbox.label;"/>
+	<hbox>
+	  <label control="marginLeftTextbox" value="&navbarontopPrefMarginLeft.label;" accesskey="&navbarontopPrefMarginLeft.accesskey;"/>
+	  <!-- better to look up the user's screen resolution rather than make an arbitrary max. maybe later -->
+	  <textbox type="number" id="marginLeftTextbox" preference="pref_marginLeft" maxlength="4" size="4" min="0" max="2560"/>
+	  <description>&navbarontopPx.label;</description>
+	</hbox>
+	<hbox>
+	  <label control="marginRightTextbox" value="&navbarontopPrefMarginRight.label;" accesskey="&navbarontopPrefMarginRight.accesskey;"/>
+	  <textbox type="number" id="marginRightTextbox" preference="pref_marginRight" maxlength="4" size="4" min="0" max="2560"/>
+	  <description>&navbarontopPx.label;</description>
+	</hbox>
+  </groupbox>
+</prefpane>
+ 
+</prefwindow>

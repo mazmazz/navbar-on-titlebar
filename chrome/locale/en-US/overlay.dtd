@@ -1,0 +1,16 @@
+<!ENTITY viewNavBarOnTop.label "Navigation Bar on Top">
+<!ENTITY viewNavBarOnTop.accesskey "P">
+
+<!ENTITY navbarontopPrefPersistUnMaximized.label "Keep navigation bar/tabs toolbar on top when unmaximized">
+<!ENTITY navbarontopPrefPersistUnMaximized.accesskey "K">
+<!ENTITY navbarontopPrefMinimumWidthEnable.label "Move toolbars down when window is narrower than:">
+<!ENTITY navbarontopPrefMinimumWidthEnable.accesskey "N">
+<!ENTITY navbarontopPrefMarginLeft.label "Navigation bar left margin:">
+<!ENTITY navbarontopPrefMarginLeft.accesskey "L">
+<!ENTITY navbarontopPrefMarginRight.label "Navigation bar right margin:">
+<!ENTITY navbarontopPrefMarginRight.accesskey "R">
+<!ENTITY navbarontopPrefMainGroupbox.label "General options">
+<!ENTITY navbarontopPrefDisplayGroupbox.label "Display options">
+<!ENTITY navbarontopPx.label "px">
+<!ENTITY navbarontopPrefWindow.label "Navigation Bar on Top - Options">
+<!ENTITY navbarontopPrefMainPane.label "General">

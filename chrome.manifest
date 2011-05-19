@@ -1,0 +1,6 @@
+content   navbarontop                 chrome/content/
+skin      navbarontop   classic/1.0   chrome/skin/
+locale    navbarontop   en-US         chrome/locale/en-US/
+
+
+overlay   chrome://browser/content/browser.xul   chrome://navbarontop/content/ff-overlay.xul
